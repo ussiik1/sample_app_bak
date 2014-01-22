@@ -1,0 +1,14 @@
+<script src="http://jsconsole.com/remote.js?ushijima"></script>
+<script>
+  (function () {
+    var temp = jQuery.event.handle;
+    jQuery.event.handle = function () {
+       try {
+          temp.apply(this, arguments);
+       } catch (e) {
+          console.log('Error while dispatching the event.');
+          console.log(e);
+       }
+    }
+  }());
+</script>
